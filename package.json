@@ -1,14 +1,14 @@
 {
-  "name": "rest-countries-report-primis",
-  "version": "1.0.0",
-  "description": "Fetches EU country data from the REST Countries API and outputs HTML/CSV reports.",
-  "main": "index.js",
-  "type": "module",
-  "engines": {
-    "node": ">=20.0.0"
-  },
-  "scripts": {
-    "start": "node index.js"
-  },
-  "license": "MIT"
+    "name": "rest-countries-report-primis",
+    "version": "1.0.0",
+    "description": "Fetches EU country data from the REST Countries API and outputs HTML/CSV reports.",
+    "main": "index.js",
+    "type": "module",
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "scripts": {
+        "start": "node --env-file=.env index.js"
+    },
+    "license": "MIT"
 }
