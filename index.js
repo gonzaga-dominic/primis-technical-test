@@ -2,6 +2,7 @@ import { getCountries } from './src/getCountries.js';
 import { logMessage } from './src/utils.js';
 import { processCountries } from './src/processCountries.js';
 import { createCSV } from './src/createCSV.js';
+import { createHTML } from './src/createHTML.js';
 
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -40,6 +41,12 @@ async function main() {
     const csvPath = path.join(OUTPUT_DIR, 'countries.csv');
     await writeFile(csvPath, csvContent, 'utf8');
     logMessage(`CSV file created at: ${csvPath}`);
+
+    const htmlContent = createHTML(processedCountries);
+    const htmlPath = path.join(OUTPUT_DIR, 'countries.html');
+    await writeFile(htmlPath, htmlContent, 'utf8');
+    logMessage(`HTML file created at: ${htmlPath}`);
+    logMessage(`Reports successfully generated.`);
 }
 
 main()
