@@ -36,6 +36,27 @@ This executes the main script in `index.js`, which will:
 - generate a CSV report at `output/countries.csv`
 - generate an HTML report at `output/countries.html`
 
+## Filtering by subregion
+
+You can optionally use the --region flag to fetch countries from a specific European subregion.
+
+For example:
+```
+node index.js --region "Northern Europe"
+```
+When the --region flag is provided, the application fetches countries using the specified subregion instead of fetching all European countries.
+
+The value should be wrapped in quotes when it contains spaces.
+
+For example:
+```
+node index.js --region "Western Europe"
+node index.js --region "Eastern Europe"
+node index.js --region "Southern Europe"
+node index.js --region "Northern Europe"
+```
+If the --region flag is omitted, the application fetches all countries in Europe.
+
 ## Output files
 
 After a successful run, the following files will be created in the `output` directory:

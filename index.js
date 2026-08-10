@@ -17,7 +17,28 @@ const OUTPUT_DIR = path.join(__dirname, 'output');
  * Program entry point
  */
 async function main() {
-    const rawCountries = await getCountries();
+    const argv = process.argv.slice(2);
+    const flagIndex = argv.indexOf('--region');
+
+    let subRegion = null;
+
+    if (flagIndex !== -1 && argv[flagIndex + 1]) {
+        subRegion = argv[flagIndex + 1];
+    }
+
+    let rawCountries;
+
+    if (subRegion) {
+        logMessage(
+            `Fetching countries for region: Europe, subregion: ${subRegion}`
+        );
+
+        rawCountries = await getCountries('Europe', subRegion);
+    } else {
+        logMessage('Fetching countries for region: Europe');
+
+        rawCountries = await getCountries();
+    }
 
     if (!rawCountries || rawCountries.length === 0) {
         console.error('No countries found.');
