@@ -14,7 +14,7 @@ A Node.js project that fetches european country data from a REST Countries-style
 
 ## Configuration
 
-The application reads its API settings from environment variables. A .env.example file is included as a template with the required configuration. Copy it to .env in the project root and update the values with your API endpoint settings.
+The application reads its API settings from environment variables. A .env.example file is included as a template with the required configuration. Copy it to .env in the project root and update the values with your API endpoint settings. Obtain your free API key here: https://restcountries.com/sign-up
 
 ```env
 BASE_API_URL=https://api.restcountries.com/countries/v5
