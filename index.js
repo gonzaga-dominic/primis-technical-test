@@ -1,6 +1,6 @@
 import { getCountries } from './src/getCountries.js';
 import { logMessage } from './src/utils.js';
-
+import { processCountries } from './src/processCountries.js';
 
 /**
  * Program entry point
@@ -21,7 +21,8 @@ async function main() {
 
     logMessage(`Sorted ${sortedCountries.length} countries.`);
 
-
+    const processedCountries = processCountries(sortedCountries);
+    logMessage(`Processed ${processedCountries.length} countries.`);
 }
 
 main()
