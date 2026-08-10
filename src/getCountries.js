@@ -1,3 +1,7 @@
+import { loadEnvFile } from 'node:process';
+
+loadEnvFile();
+
 const API_BASE_URL = process.env.BASE_API_URL;
 const API_KEY = process.env.API_KEY;
 
